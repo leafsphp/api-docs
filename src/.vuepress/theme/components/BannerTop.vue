@@ -15,9 +15,9 @@ $topBannerHeightMobile ?= 3.125rem
 // Banner
 #vs
   align-items: center
-  background-color: darken($accentColor, 20%)
+  background-color: darken(#ffbd00, 10%)
   box-sizing: border-box
-  color: lighten($accentColor, 80%)
+  color: lighten(#f4cd00, 90%)
   display: none
   font-family "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   justify-content: center

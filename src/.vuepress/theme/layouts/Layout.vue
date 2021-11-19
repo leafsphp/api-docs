@@ -137,7 +137,6 @@ export default {
 
     shouldShowBanner() {
       return (
-        this.$page.frontmatter.home &&
         (this.$site.themeConfig.topBanner || false)
       )
     },
