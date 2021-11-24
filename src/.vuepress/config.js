@@ -237,7 +237,7 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500|DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700|Inter:300,400,500,600|Open+Sans:400,600;display=swap',
         rel: 'stylesheet',
-        async: true,
+        async: true
       }
     ],
     [
@@ -246,7 +246,7 @@ module.exports = {
         href:
           'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
         rel: 'stylesheet',
-        async: true,
+        async: true
       }
     ],
     [
@@ -295,7 +295,7 @@ module.exports = {
         src: 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js',
         nomodule: 'nomodule'
       }
-    ],
+    ]
   ],
   themeConfig: {
     logo: '/logo-circle.png',
@@ -310,12 +310,12 @@ module.exports = {
           },
           {
             text: 'Codelabs',
-            link: '/codelabs/'
+            link: 'https://codelabs.leafphp.dev'
           },
           {
             text: 'Contribute',
             link: 'https://leafphp.dev/docs/contributing/writing-guide'
-          },
+          }
           // {
           //   text: 'Migration from Leaf 2',
           //   link: '/docs/migration/introduction'
