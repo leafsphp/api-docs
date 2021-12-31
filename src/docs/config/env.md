@@ -1,8 +1,8 @@
 # Env config
 
-leaf MVC tries to maintain a working-out-of-the-box configuration as much as possible, so, for the most part, you don't have to configure anything.
+Leaf API tries to maintain a working-out-of-the-box configuration as much as possible, so, for the most part, you don't have to configure anything.
 
-Any configuration done in leaf MVC is not done for leaf MVC, but rather for your application. All config for your app is found in the `.env` file, found in your project root.
+Any configuration done in Leaf API is not done for Leaf API, but rather for your application. All config for your app is found in the `.env` file, found in your project root.
 
 ## .env
 

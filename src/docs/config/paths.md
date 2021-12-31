@@ -4,7 +4,7 @@ aside: none
 
 # Path Config
 
-leaf MVC v2 comes in with a whole lot of available customizations. One major customization is the paths config. This allows you to change leaf MVC's directory structure to something you prefer. This means you can rearrange the whole of leaf MVC and have all your files still map correctly: a feature which was only available in skeleton.
+Leaf API v2 comes in with a whole lot of available customizations. One major customization is the paths config. This allows you to change Leaf API's directory structure to something you prefer. This means you can rearrange the whole of Leaf API and have all your files still map correctly: a feature which was only available in skeleton.
 
 ```php
 <?php

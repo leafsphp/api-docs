@@ -3,10 +3,10 @@
 **This console uses the `php` console, so you should have php path defined😉**
 
 ::: warning Note
-This is just a mini documentation on Aloe CLI and how it is used in Leaf MVC. For the full documentation, please refer to the [aloe cli documentation](https://leafphp.dev/aloe-cli/)
+This is just a mini documentation on Aloe CLI and how it is used in Leaf API. For the full documentation, please refer to the [aloe cli documentation](https://leafphp.dev/aloe-cli/)
 :::
 
-Aloe is CLI that comes with leaf MVC and Leaf MVC v2 upwards. Aloe is integrated into the `leaf` script and provides a number of helpful commands that can assist you while you build your application. To view all available commands, you can use the `list` command or call `leaf`.
+Aloe is CLI that comes with Leaf API and Leaf API v2 upwards. Aloe is integrated into the `leaf` script and provides a number of helpful commands that can assist you while you build your application. To view all available commands, you can use the `list` command or call `leaf`.
 
 ```bash
 php leaf list
@@ -36,7 +36,7 @@ Aside all the commands provided by aloe, you can also create your own commands a
 
 To create a new command, you may use the `g:command` aloe command. This command will create a new command class in the default commands directory.
 
-The default directory for commands in leaf MVC and Leaf MVC is `App\Console`, with skeleton, you're free to decide where to place your commands.
+The default directory for commands in Leaf API and Leaf API is `App\Console`, with skeleton, you're free to decide where to place your commands.
 
 ```sh
 php leaf g:command SendMail

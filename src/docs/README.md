@@ -1,22 +1,22 @@
-# leafMVC
+# leafAPI
 
 <p class="alert -info">
-  Leaf MVC v2.0 is finally here🎉🎉🎉. Read the docs <a href="/#/leaf-mvc/v/2.0/">here</a>
+  Leaf API v2.0 is finally here🎉🎉🎉. Read the docs <a href="/#/leaf-mvc/v/2.0/">here</a>
 </p>
 
-Leaf MVC is a lightweight PHP MVC framework that allows you to quickly build powerful web apps and APIs. LeafMVC serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment, as such you're still using Leaf.
+Leaf API is a lightweight PHP MVC framework that allows you to quickly build powerful web apps and APIs. LeafMVC serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment, as such you're still using Leaf.
 
 ## Installation
 
 ### Composer
 
-You can quickly create a Leaf MVC project with [composer](https://getcomposer.org).
+You can quickly create a Leaf API project with [composer](https://getcomposer.org).
 
-```bash
+```sh
 composer create-project leafs/mvc <project-name>
 ```
 
-That's it! This will create a new Leaf MVC project named `<project-name>`.
+That's it! This will create a new Leaf API project named `<project-name>`.
 
 ### Github
 

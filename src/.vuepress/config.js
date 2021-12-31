@@ -54,182 +54,11 @@ const sidebar = {
       ]
     }
   ],
-  cli: [
-    {
-      title: 'Leaf CLI',
-      collapsable: false,
-      children: ['/cli/', '/cli/v/1.0/', '/cli/v/2.0/']
-    }
-  ],
-  aloe: [
-    {
-      title: 'Aloe CLI',
-      collapsable: false,
-      children: [
-        { title: 'Home', path: '/aloe-cli/' },
-        {
-          title: 'Getting Started',
-          path: '/aloe-cli/v/1.2.3/getting-started/'
-        }
-      ]
-    },
-    {
-      title: 'Default Commands',
-      collapsable: false,
-      children: [
-        {
-          title: 'Misc Commands',
-          path: '/aloe-cli/v/1.2.3/commands/misc-commands'
-        },
-        {
-          title: '"Generate" Commands',
-          path: '/aloe-cli/v/1.2.3/commands/g-commands'
-        },
-        {
-          title: '"Delete" Commands',
-          path: '/aloe-cli/v/1.2.3/commands/d-commands'
-        },
-        {
-          title: '"DB" Commands',
-          path: '/aloe-cli/v/1.2.3/commands/db-commands'
-        }
-      ]
-    },
-    {
-      title: 'Aloe CLI',
-      collapsable: false,
-      children: [
-        {
-          title: 'Custom Commands',
-          path: '/aloe-cli/v/1.2.3/commands/custom'
-        },
-        {
-          title: 'Command IO',
-          path: '/aloe-cli/v/1.2.3/commands/io'
-        }
-      ]
-    },
-    {
-      title: 'Aloe Misc',
-      collapsable: false,
-      children: [
-        { title: 'Aloe Libraries', path: '/aloe-cli/v/1.2.3/libraries' },
-        '/aloe-cli/v/1.2.3/installer'
-      ]
-    }
-  ],
-  modules: [
-    {
-      title: 'Quick links',
-      collapsable: false,
-      children: [
-        { title: 'Leaf Docs', path: '/docs/introduction/' },
-        { title: 'Leaf API', path: '/leaf-api/' },
-        { title: 'Leaf MVC', path: '/leaf-mvc/' },
-        { title: 'Skeleton', path: '/skeleton/' }
-      ]
-    },
-    {
-      title: 'Core',
-      collapsable: true,
-      children: [
-        '/modules/',
-        '/modules/anchor/',
-        '/modules/anchor/csrf/',
-        '/modules/db/',
-        '/modules/auth/',
-        '/modules/forms/',
-        {
-          title: 'Http',
-          collapsable: true,
-          children: [
-            '/modules/http/',
-            '/modules/http/request',
-            '/modules/http/response',
-            '/modules/http/headers',
-            '/modules/http/cache',
-            '/modules/cors/',
-            '/modules/session/',
-            '/modules/session/flash',
-            '/modules/cookies/'
-          ]
-        },
-        {
-          title: 'Router',
-          collapsable: true,
-          children: [
-            '/modules/router/',
-            '/modules/router/errors',
-            '/modules/router/sub-routing',
-            '/modules/router/dynamic',
-            '/modules/router/middleware',
-            '/modules/router/sub-patterns',
-            '/modules/router/sub-folder',
-            '/modules/router/controller'
-          ]
-        }
-      ]
-    },
-    {
-      title: 'Helpers',
-      collapsable: true,
-      children: [
-        '/modules/date/',
-        '/modules/fs/',
-        '/aloe-cli/',
-        '/modules/fetch/',
-        '/modules/passwords/'
-      ]
-    },
-    {
-      title: 'Views',
-      collapsable: true,
-      children: [
-        '/modules/views/',
-        '/modules/views/bareui/',
-        '/modules/views/blade/',
-        '/modules/views/veins/'
-      ]
-    },
-    {
-      title: 'Extras',
-      collapsable: true,
-      children: [
-        '/modules/mvc-core/',
-        '/modules/mail/',
-        '/modules/db-old/',
-        '/modules/redis/'
-      ]
-    }
-  ],
-  contributing: [
-    {
-      title: 'Contribute to the Docs',
-      collapsable: false,
-      children: [
-        '/docs/contributing/writing-guide',
-        '/docs/contributing/doc-style-guide'
-      ]
-    }
-  ],
-  community: [
-    {
-      title: 'Community',
-      collapsable: false,
-      children: [
-        '/community/team',
-        '/community/join',
-        '/coc/',
-        '/community/contributing',
-        '/support/'
-      ]
-    }
-  ]
 }
 
 module.exports = {
   title: 'Leaf API',
-  description: 'Leaf API - Leaf MVC with APIs in mind',
+  description: 'Leaf API - Leaf API with APIs in mind',
   head: [
     [
       'link',
@@ -334,13 +163,17 @@ module.exports = {
             ariaLabel: 'Community Menu',
             items: [
               {
+                text: 'Blog',
+                link: 'https://blog.leafphp.dev/'
+              },
+              {
                 text: 'Team',
                 link: 'https://leafphp.dev/community/team/'
               },
               {
                 text: 'Join',
                 link: 'https://leafphp.dev/community/join/'
-              }
+              },
             ]
           },
           {
@@ -359,7 +192,7 @@ module.exports = {
                 link: 'https://leafphp.dev/modules/'
               },
               {
-                text: 'Leaf MVC',
+                text: 'Leaf API',
                 link: 'https://mvc.leafphp.dev'
               },
               {
@@ -376,7 +209,7 @@ module.exports = {
       },
       {
         text: 'Support Leaf',
-        link: '/support/'
+        link: 'https://leafphp.dev/support/'
       }
     ],
     repo: 'leafsphp/api-docs',
@@ -387,15 +220,7 @@ module.exports = {
     sidebarDepth: 2,
     sidebar: {
       collapsable: true,
-      '/docs/contributing/': sidebar.contributing,
-      '/modules/': sidebar.modules,
       '/docs/': sidebar.guide,
-      '/community/': sidebar.guide,
-      '/codelabs/': sidebar.codelabs,
-      '/aloe-cli/': sidebar.aloe,
-      '/cli/': sidebar.cli,
-      '/community/': sidebar.community,
-      '/coc/': sidebar.community
     },
     smoothScroll: true,
     algolia: {

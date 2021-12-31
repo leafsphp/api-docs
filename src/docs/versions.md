@@ -1,6 +1,6 @@
-# Leaf MVC Versions
+# Leaf API Versions
 
-This is a list of all Leaf MVC versions
+This is a list of all Leaf API versions
 
 <div class="version-cards">
   <a href="https://leafmvc.netlify.app" class="version-card">

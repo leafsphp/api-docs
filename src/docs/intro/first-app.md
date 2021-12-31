@@ -1,12 +1,12 @@
 # Your first app ✨
 
-Before you go on, leaf MVC is powered by [Leaf](https://leafphp.dev/), so we'll recommend getting familiar with the core [Leaf package](https://leafphp.dev/) first. Not to worry, it takes just about 5-10 minutes to completely learn the basics if you've used any PHP framework before.
+Before you go on, Leaf API is powered by [Leaf](https://leafphp.dev/), so we'll recommend getting familiar with the core [Leaf package](https://leafphp.dev/) first. Not to worry, it takes just about 5-10 minutes to completely learn the basics if you've used any PHP framework before.
 
-Note that all your development is done in the `App` directory. By default, a few demos have been created to give you a quick idea on how leaf MVC works.
+Note that all your development is done in the `App` directory. By default, a few demos have been created to give you a quick idea on how Leaf API works.
 
 ## Introduction 📖
 
-This is a little "tutorial" put together to introduce you to leaf MVC, and help you learn all needed concepts. We'll be building a simple blog to demonstrate how leaf MVC works. We’ll be using models, request, views, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
+This is a little "tutorial" put together to introduce you to Leaf API, and help you learn all needed concepts. We'll be building a simple blog to demonstrate how Leaf API works. We’ll be using models, request, views, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
 
 ::: warning Note that
 If you are not familiar with PHP, we recommend that you check out the [W3Schools PHP Tutorial](https://www.w3schools.com/php/default.asp) before continuing.
@@ -14,7 +14,7 @@ If you are not familiar with PHP, we recommend that you check out the [W3Schools
 
 ## Our First App
 
-In the [previous section](/docs/#Installation), we looked at installation, leaf MVC's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your leaf MVC structure should be initialized for you. You can run the intro app with
+In the [previous section](/docs/#Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
 
 ```bash
 php leaf serve
@@ -32,7 +32,7 @@ Routing is based on the leaf 3 and uses the leaf router module. If you haven't a
 
 Routes are stored in the `app/routes` directory. In there, you can create routes specific to an operation like `_users.php` or `_transactions.php` which hold routes specific to that operation. After this, you can link these files by requiring them in `app/routes/index.php`. This is totally optional as you can list all your routes in the `app/routes/index.php` file.
 
-Example routes have been created to give you a fair idea on how to handle routing with Leaf MVC.
+Example routes have been created to give you a fair idea on how to handle routing with Leaf API.
 
 Now, let’s get started.
 
@@ -102,7 +102,7 @@ use Leaf\Router;
 Router::get("/", "PagesController@index");
 ```
 
-Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your leaf MVC. We can generate our controller like this:
+Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your Leaf API. We can generate our controller like this:
 
 ```sh
 php leaf g:controller <name>
@@ -110,7 +110,7 @@ php leaf g:controller <name>
 
 Aloe CLI tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Aloe CLI has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
 
-In this case, this particular controller @ method index, is supposed to output a view. There are a bunch of ways to output views in Leaf MVC. You can simply output a bunch of markup with `markup`.
+In this case, this particular controller @ method index, is supposed to output a view. There are a bunch of ways to output views in Leaf API. You can simply output a bunch of markup with `markup`.
 
 ```php
 response()->markup("<h2>Hello</h2>");
@@ -180,7 +180,7 @@ public function search() {
 }
 ```
 
-Now in leaf MVC v2, the whole request object is available on the `request` method. The `request` method can also be used to get items from the request.
+Now in Leaf API v2, the whole request object is available on the `request` method. The `request` method can also be used to get items from the request.
 
 ```php
 // get username

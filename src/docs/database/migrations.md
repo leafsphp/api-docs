@@ -1,6 +1,6 @@
-# 📕 leaf MVC Migrations
+# 📕 Leaf API Migrations
 
-For those who struggle with maintaining their database schema, or who have problems applying updates and often revert them, there is a solution. leaf MVC migrations basically help in creating and manipulating database.
+For those who struggle with maintaining their database schema, or who have problems applying updates and often revert them, there is a solution. Leaf API migrations basically help in creating and manipulating database.
 
 <p class="alert -warning">
   Leaf CLI has been mmoved to Aloe CLI, as such, all migration commands now depend on Aloe.
@@ -168,7 +168,7 @@ Help:
 
 ## Next Steps
 
-The idea for leaf MVC migrations was based on Laravel migrations, so you can read [Laravel migrations](https://laravel.com/docs/7.x/migrations) for a better understanding.
+The idea for Leaf API migrations was based on Laravel migrations, so you can read [Laravel migrations](https://laravel.com/docs/7.x/migrations) for a better understanding.
 
 - [Views](/leaf-mvc/v/2.0/core/views)
 - [Leaf Core Model](/leaf/v/2.4.3/core/model)

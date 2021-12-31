@@ -1,16 +1,16 @@
 # Controllers
 
-Instead of defining all of your request handling logic as closures in your route files, Leaf MVC encourages you to replace this behavior using "controller" classes.
+Instead of defining all of your request handling logic as closures in your route files, Leaf API encourages you to replace this behavior using "controller" classes.
 
 Controllers can group related request handling logic into a single class. For example, a `UserController` class might handle all incoming requests related to users, including showing, creating, updating, and deleting users. By default, controllers are stored in the `app/controllers` directory.
 
 ## Writing Controllers
 
-All leaf MVC controllers are kept in the `app/controllers` directory. So you can manually create your own controller there, but the recommended method is to use the console.
+All Leaf API controllers are kept in the `app/controllers` directory. So you can manually create your own controller there, but the recommended method is to use the console.
 
 ### Generating Controllers
 
-In the root of your leaf MVC project, open up your console and type:
+In the root of your Leaf API project, open up your console and type:
 
 ```sh
 php leaf g:controller <Name>
@@ -34,7 +34,7 @@ php leaf g:controller <Name> -r
 
 ### Basic Controllers
 
-Let's take a look at an example of a basic controller. Note that the controller extends the base controller class included with leaf MVC. The base controller further extends Leaf's base controller, and since all your controllers extend that base controller, you can share behaviours and variables between all your controllers. A simple controller would look like this:
+Let's take a look at an example of a basic controller. Note that the controller extends the base controller class included with Leaf API. The base controller further extends Leaf's base controller, and since all your controllers extend that base controller, you can share behaviours and variables between all your controllers. A simple controller would look like this:
 
 ```php
 <?php

@@ -4,7 +4,7 @@ aside: none
 
 # Aloe Config
 
-Aloe CLI is used in leaf MVC and leaf API to run commands that make your app development process simple. This config basically allows you to configure Aloe CLI's behaviour.
+Aloe CLI is used in Leaf API and leaf API to run commands that make your app development process simple. This config basically allows you to configure Aloe CLI's behaviour.
 
 For now aloe only allows you to configure the directory paths. This allows you to select paths for stuff like controllers, models and migrations. This means that aloe will generate and read files only in the specified directories.
 
@@ -29,6 +29,6 @@ return [
 ];
 ```
 
-The default config has already been set to match leaf MVC's directories, but if you need to change any of Aloe CLI's paths, this is where you can do that.
+The default config has already been set to match Leaf API's directories, but if you need to change any of Aloe CLI's paths, this is where you can do that.
 
 For documentation on Aloe CLI, you can check the [documentation](https://leafphp.dev/aloe-cli/)

@@ -1,6 +1,6 @@
-# leaf MVC Paths <sup class="new-tag-1">New</sup>
+# Leaf API Paths <sup class="new-tag-1">New</sup>
 
-Paths define where leaf MVC should look for items throughout the file system. Also these paths are available as methods you can call.
+Paths define where Leaf API should look for items throughout the file system. Also these paths are available as methods you can call.
 
 ## Available Paths
 

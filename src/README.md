@@ -2,10 +2,10 @@
 home: true
 heroImage: /logo-circle.png
 heroText: Leaf API 3.0
-tagline: Leaf MVC with APIs in mind
+tagline: Leaf API with APIs in mind
 actionButtons:
   - text: Get Started
-    link: /docs/introduction/
+    link: /docs/
   - text: GitHub
     link: https://github.com/leafsphp/leafapi
     extraClass: github grey

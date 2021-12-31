@@ -29,7 +29,7 @@ As with any project, there are rules to contributing. To ensure that we can help
 After that, you'll be ready to contribute to Leaf's core repositories:
 
 - [Leaf](https://github.com/leafsphp/leaf): the core library
-- [Leaf MVC](https://github.com/leafsphp/leafMVC): MVC powered wrapper around Leaf PHP
+- [Leaf API](https://github.com/leafsphp/leafMVC): MVC powered wrapper around Leaf PHP
 - [Leaf API](https://github.com/leafsphp/leafAPI): MVC powered wrapper specialized for building APIs.
 
 ...as well as many smaller official [companion libraries](https://github.com/leafsphp).

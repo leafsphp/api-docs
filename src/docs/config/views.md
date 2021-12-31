@@ -4,7 +4,7 @@ aside: none
 
 # View Config
 
-leaf MVC v2 also ports in Leaf MVC's view config which allows you to customize how Leaf manages templates.
+Leaf API v2 also ports in Leaf API's view config which allows you to customize how Leaf manages templates.
 
 ```php
 <?php

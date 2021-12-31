@@ -1,4 +1,4 @@
-# leaf MVC Helper Functions 🏥
+# Leaf API Helper Functions 🏥
 
 These are simple-to-use functions that are available everywhere in your application. You can call these functions in your routes, controllers and everywhere you need them.
 

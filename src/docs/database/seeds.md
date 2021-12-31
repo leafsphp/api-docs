@@ -1,6 +1,6 @@
 # Seeds <sup class="new-tag-1">New</sup>
 
-leaf MVC includes the ability to seed your database with test data using seed classes. All seed classes are stored in the `App/Database/Seeds` directory. By default, a `DatabaseSeeder` class is defined for you. From this class, you simply return the seed classes you want to run in your prefered order.
+Leaf API includes the ability to seed your database with test data using seed classes. All seed classes are stored in the `App/Database/Seeds` directory. By default, a `DatabaseSeeder` class is defined for you. From this class, you simply return the seed classes you want to run in your prefered order.
 
 <p class="alert -warning">
   Aloe CLI introduces extensive support for seeds hence, you no longer have to work with seeds manually.

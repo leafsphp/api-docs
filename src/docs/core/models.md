@@ -2,16 +2,16 @@
 <!-- markdownlint-disable no-inline-html -->
 
 ::: warning Not that
-leaf MVC models extend the base model, so read [Leaf MVC core docs](https://www.leafphp.dev/modules/mvc-core/) for full functionality.
+Leaf API models extend the base model, so read [Leaf API core docs](https://www.leafphp.dev/modules/mvc-core/) for full functionality.
 :::
 
 ::: tip Eloquent
 MVC Core models are powered by Laravel's eloquent engine so we recommend [getting familiar with it](https://laravel.com/docs/8.x/eloquent).
 :::
 
-In leaf MVC, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in leaf MVC is to generate the model and include it in our controller.
+In Leaf API, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in Leaf API is to generate the model and include it in our controller.
 
-Our Models are kept in `app/models`, but we won't need to create our models manually. leaf MVC's command line tool covers this for us.
+Our Models are kept in `app/models`, but we won't need to create our models manually. Leaf API's command line tool covers this for us.
 
 ::: warning Commands
 Model commands now rely on Aloe CLI instead of the standard Leaf CLI.
@@ -32,7 +32,7 @@ class ClassName extends Model {
 }
 ```
 
-That's all we **need** to do with our model. leaf MVC's models have methods prepared which allow us to manipulate out database without doing much.
+That's all we **need** to do with our model. Leaf API's models have methods prepared which allow us to manipulate out database without doing much.
 
 We can create, read, update and delete without writing any code to specially access our database.
 

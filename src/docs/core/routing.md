@@ -1,10 +1,10 @@
 # Routing
 
 ::: tip Leaf router
-leaf MVC uses Leaf's router so be sure [read the docs](https://leafphp.dev/docs/routing/).
+Leaf API uses Leaf's router so be sure [read the docs](https://leafphp.dev/docs/routing/).
 :::
 
-Leaf MVC keeps all routes in the `app/routes` directory. All routes are defined the `index.php` file round in the routes directory, however, you can create files pertaining to a group of routes which allows you to break routes into groups.
+Leaf API keeps all routes in the `app/routes` directory. All routes are defined the `index.php` file round in the routes directory, however, you can create files pertaining to a group of routes which allows you to break routes into groups.
 
 ## Basic Routing
 
