@@ -6,7 +6,7 @@ Note that all your development is done in the `App` directory. By default, a few
 
 ## Introduction 📖
 
-This is a little "tutorial" put together to introduce you to Leaf API, and help you learn all needed concepts. We'll be building a simple blog to demonstrate how Leaf API works. We’ll be using models, request, views, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
+This is a little 'tutorial' put together to introduce you to Leaf API, and help you learn all needed concepts. We'll be building a simple blog to demonstrate how Leaf API works. We’ll be using models, request, views, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
 
 ::: warning Note that
 If you are not familiar with PHP, we recommend that you check out the [W3Schools PHP Tutorial](https://www.w3schools.com/php/default.asp) before continuing.
@@ -20,14 +20,14 @@ In the [previous section](/docs/#Installation), we looked at installation, Leaf 
 php leaf serve
 ```
 
-When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
+When we take a look at our `public/index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
 
-As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/leaf/v/2.4.3/intro/htaccess) file.
+As such, `public/index.php` serves as our project root. Every request/page load passes through `public/index.php` first and this is done because of the [.htaccess](/leaf/v/2.4.3/intro/htaccess) file.
 
 ### Routing
 
 ::: warning Note that
-Routing is based on the leaf 3 and uses the leaf router module. If you haven't already read the docs, we recommend that you read on [routing with leaf PHP](https://leafphp.dev/docs/routing)
+Routing is based on leaf 3 and uses the leaf router module. If you haven't already read the docs, we recommend that you read on [routing with leaf PHP](https://leafphp.dev/docs/routing)
 :::
 
 Routes are stored in the `app/routes` directory. In there, you can create routes specific to an operation like `_users.php` or `_transactions.php` which hold routes specific to that operation. After this, you can link these files by requiring them in `app/routes/index.php`. This is totally optional as you can list all your routes in the `app/routes/index.php` file.
@@ -51,12 +51,25 @@ app()->get('/', function() {
 # Leaf router
 use Leaf\Router;
 
-Router::get("/", function() {
+Router::get('/', function() {
   // Do something here
 });
 ```
 
 This is what a basic Leaf route looks like.
+
+::: tip Routing
+Although any of the above methods would work, we recommend using the functional mode `app` syntax instead.
+
+```php
+app()->get('/', function() {
+  // Do something here
+});
+```
+
+All examples below will follow this syntax.
+
+:::
 
 But in this case we're working in an MVC environment, we would want controllers to handle various routes, so, let's do just that.
 
@@ -80,26 +93,14 @@ Back in our routes file, we can use this controller like so:
 
 ```php
 app()->get('/', '\App\Controllers\PagesController@index');
-
-Route("GET", "/", "\App\Controllers\PagesController@index");
-
-# leaf router class
-use Leaf\Router;
-
-Router::get("/", "\App\Controllers\PagesController@index");
 ```
 
 Although this is perfectly fine, it's quite annoying to type `\App\Controllers` for every route, so we can set a namespace for all our routes.
 
 ```php
-app()->setNamespace("\App\Controllers");
+app()->setNamespace('\App\Controllers');
 
-app()->get("/", "PagesController@index");
-
-# leaf router class
-use Leaf\Router;
-
-Router::get("/", "PagesController@index");
+app()->get('/', 'PagesController@index');
 ```
 
 Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your Leaf API. We can generate our controller like this:
@@ -110,21 +111,16 @@ php leaf g:controller <name>
 
 Aloe CLI tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Aloe CLI has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
 
-In this case, this particular controller @ method index, is supposed to output a view. There are a bunch of ways to output views in Leaf API. You can simply output a bunch of markup with `markup`.
+In this case, this particular controller @ method index, is supposed to output some JSON. We can do this using the `json` method.
 
 ```php
-response()->markup("<h2>Hello</h2>");
+response()->json([
+  'status' => 'success',
+  'message' => 'Hello World!'
+]);
 ```
 
-Of course, this isn't that practical😆
-
-The next method is to output a static HTML/PHP page. Of course, this method is more practical.
-
-```php
-response()->page("./index.html");
-```
-
-The final method is to use a templating engine. This is the most common method people use when it comes to displaying views. Leaf comes with Leaf blade by default which you can utilize by simply calling `view` or `render`. Let's use that in our controller.
+Now, let's use that in our controller.
 
 ```php
 <?php
@@ -134,35 +130,23 @@ namespace App\Controllers;
 class PagesController extends Controller {
   public function index()
   {
-    render("pages.home");
+    response()->json([
+      'status' => 'success',
+      'message' => 'Hello World!'
+    ]);
   }
 }
 ```
 
-Now, we need to define `pages/home.blade.php` so we don't get an error when we load this route. We can do this quickly with aloe cli:
-
-```sh
-php leaf g:template pages/home
-```
-
-::: tip Quick tip
-Aloe allows you to generate templates for other systems too. You can pass a `-t` option with any of these values (html, jsx, vue, blade) to specify what view you prefer. Defaults to blade if nothing is provided.
-
-```sh
-php leaf g:template pages/home -t vue
-```
-
-:::
-
 ### Request
 
-Response/Views send data out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.4.3/http/request).
+We've been able to send data out of our application, with `Response` on the flip side, `Request` handles the data that comes into our application. Read the [Leaf Request docs](https://leafphp.dev/modules/http/request.html).
 
 Let's look at a basic example. Inside our controller:
 
 ```php
 public function search() {
-  $keywords = $this->request->get("keywords");
+  $keywords = $this->request->get('keywords');
 
   // ... handle search operation
   $this->json($results);
@@ -173,33 +157,50 @@ There are however global methods like `json` we saw above. You can use these met
 
 ```php
 public function search() {
-  $keywords = request("keywords");
+  $keywords = request('keywords');
 
   // ... handle search operation
-  render("search", ["results" => $results]);
+  response($results);
 }
 ```
 
-Now in Leaf API v2, the whole request object is available on the `request` method. The `request` method can also be used to get items from the request.
+::: tip <code>request</code>
+You might have noticed that we didn't use `request()->get()`. That's because the `request` global takes in an optional parameter which immedietly runs the `get` method directly.
 
 ```php
 // get username
-$username = request("username");
+$username = request('username');
 
 // get username
-$username = request()->get("username");
+$username = request()->get('username');
 ```
 
-Leaf v2.4.3 allows you to use request methods statically which means you can also do this:
+:::
+
+::: tip <code>response</code>
+You might have noticed that we didn't use `response()->json()`. That's because the `response` global takes in an optional parameter to output which immedietly runs the `json` method directly.
+
+```php
+// output json data
+$username = response($output);
+
+// output json data
+$username = response()->json($output);
+```
+
+:::
+
+If for some reason, you can't use the functional mode globals, you can always use the request and response classes.
 
 ```php
 use Leaf\Http\Request;
+use Leaf\Http\Response;
 
 public function search() {
-  $keywords = Request::get("keywords");
+  $keywords = Request::get('keywords');
 
   // ... handle search operation
-  render("search", ["results" => $results]);
+  Response::json($results);
 }
 ```
 
@@ -236,8 +237,6 @@ After this, you should find a new migration in `App\Database\Migrations` looking
 ```php
 <?php
 
-namespace App\Database\Migrations;
-
 use Leaf\Database;
 use Illuminate\Database\Schema\Blueprint;
 
@@ -248,25 +247,27 @@ class CreateUsers extends Database {
    * @return void
    */
   public function up()  {
-    if(!$this->capsule::schema()->hasTable("posts")):
-      $this->capsule::schema()->create("posts", function (Blueprint $table) {
+    if (!static::$capsule::schema()->hasTable('users')):
+      static::$capsule::schema()->create('users', function (Blueprint $table) {
         $table->increments('id');
-        $table->unsignedBigInteger('user_id');
-        $table->string('title');
-        $table->text('body');
-        $table->timestamp('post_verified_at')->nullable();
+        $table->string('username');
+        $table->string('fullname');
+        $table->string('email')->unique();
+        $table->timestamp('email_verified_at')->nullable();
+        $table->string('password');
+        $table->rememberToken();
         $table->timestamps();
       });
     endif;
   }
-  
+
   /**
    * Reverse the migrations.
    *
    * @return void
    */
   public function down() {
-    $this->capsule::schema()->dropIfExists("posts");
+    static::$capsule::schema()->dropIfExists('users');
   }
 }
 ```
@@ -361,10 +362,10 @@ A resource controller is filled with resource methods which quickly help us perf
 So let's say we have a database named `blog` with a table named `posts` which has some data in it, to retrieve all the data in the `posts` table, we'll head to our controller. The first thing we'll have to do is link the resource controller to our routes. Leaf provides a simple way to do this:
 
 ```php
-app()->resource("/posts", "PostsController");
+app()->resource('/posts', 'PostsController');
 ```
 
-With this, leaf will create all the required routes for your resource controller. Check out the [routing docs](/leaf/v/2.4.3/routing/?id=resource-routes) for a break down on resource routes. Next, we need to bring in our `Post` model so we can use our database.
+With this, leaf will create all the required routes for your resource controller. Check out the [routing docs](https://leafphp.dev/docs/routing/#resource-routes) for a break down on resource routes. Next, we need to bring in our `Post` model so we can use our database.
 
 ```php
 <?php
@@ -382,7 +383,10 @@ Now let's head over to our index method and enter this:
 
 ```php
 public function index() {
-  render("posts", ["posts" => Post::all()]);
+  response()->json([
+    'status' => 'success',
+    'data' => ['posts' => Post::all()],
+  ]);
 }
 ```
 
@@ -394,7 +398,10 @@ For a blog app, we'd usually want to see our latest posts first, so we can order
 
 ```php
 public function index() {
-  render("posts", ["posts" => Post::orderBy('id', 'desc')->get()]);
+  response()->json([
+    'status' => 'success',
+    'data' => ['posts' => Post::orderBy('id', 'desc')->get()],
+  ]);
 }
 ```
 
@@ -404,7 +411,10 @@ Next, we'll want to show a particular post when we navigate to `/post/{id}` eg: 
 
 ```php
 public function show($id) {
-  render("post", ["posts" => Post::find($id)]);
+  response()->json([
+    'status' => 'success',
+    'data' => ['post' => Post::find($id)],
+  ]);
 }
 ```
 
@@ -416,8 +426,8 @@ Post::where('title', 'Post Two')->get();
 
 // create a new post
 $post = new Post;
-$post->title = request("title");
-$post->body = request("body");
+$post->title = request('title');
+$post->body = request('body');
 $post->save();
 
 // delete a post
