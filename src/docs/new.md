@@ -24,17 +24,13 @@ C:.
 │   ├───models
 │   ├───routes
 │   └───views
-│       ├───assets
-│       │   ├───css
-│       │   ├───images
-│       │   ├───js
-│       │   └───sass
 │       ├───components
 │       └───pages
 │           └───errors
 ├───config
 │   └───command
 ├───public
+│   └───assets
 ├───storage
 │   ├───app
 │   │   └───public
@@ -43,6 +39,20 @@ C:.
 │   └───logs
 └───vendor
 ```
+
+## Public directory
+
+In earlier versions, the `public` directory was hardly used, however, v3 changes things a bit. Due to security and other reasons, our application root was moved to the `public` directory.
+
+::: tip Note
+This does not change the way you build your apps in any way.
+:::
+
+Besides the app root in `public`, application assets are also now kept in the `public` directory as well. This is because the `public` directory is configured to be relative to whichever server/hosting platform or technique you are using. `public` will always point to your public directory.
+
+::: tip Note
+With this change, you will need to reference your assets with `PublicPath`
+:::
 
 ## Better configuration
 

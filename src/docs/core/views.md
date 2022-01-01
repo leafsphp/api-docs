@@ -49,5 +49,3 @@ render('admin/profile', $data);
 
 - [Leaf Blade](/leaf/v/2.4.3/views/blade)
 - [Leaf API Helpers](/leaf-mvc/v/2.0/utils/functions)
-
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

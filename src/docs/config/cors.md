@@ -189,4 +189,4 @@ return [
 - [Models](/leaf-mvc/v/2.0/core/models)
 - [Controllers](/leaf-mvc/v/2.0/core/controllers)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

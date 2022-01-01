@@ -112,4 +112,4 @@ php leaf db:seed
 - [Factories](/leaf/v/2.4.3/database/factories)
 - [Migrations](/leaf-mvc/v/2.0/database/migrations)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

@@ -41,4 +41,4 @@ return [
 - [Leaf Blade](/leaf/v/2.4.3/views/blade)
 - [Leaf Forms](/leaf/v/2.4.3/views/forms)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

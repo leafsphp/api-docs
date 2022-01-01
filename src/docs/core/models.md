@@ -130,4 +130,4 @@ Options:
 - [Migrations](/leaf-mvc/v/2.0/database/migrations)
 - [Views](/leaf-mvc/v/2.0/core/views)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

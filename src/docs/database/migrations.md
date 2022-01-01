@@ -175,4 +175,4 @@ The idea for Leaf API migrations was based on Laravel migrations, so you can rea
 - [Leaf Core API Controllers](/leaf/v/2.4.3/core/api-controller)
 - [Leaf Auth](/leaf/v/2.4.3/core/auth)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

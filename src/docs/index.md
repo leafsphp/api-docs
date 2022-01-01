@@ -5,6 +5,8 @@ Leaf API is a lightweight and minimal MVC wrapper leaf PHP framework that provid
 
 v3.0 packs in a bunch of fresh functionality, and also features added in [v3](https://leafphp.dev) of the core Leaf package. You can view all these [changes here](/docs/new/).
 
+Also, the lightweight core framework is not always suitable for every use case, which is another reason a scalable setup in the form of Leaf API  has been created.
+
 ## Why Leaf API?
 
 There are a variety of tools and frameworks available to you when building a web application. However, we believe Leaf + MVC is the best choice for building modern, full-stack web applications.
@@ -23,16 +25,16 @@ Leaf API packs a ton of powerful tools which speed up your development process b
 
 ## Installation
 
-You can quickly create a Leaf API project with [composer](https://getcomposer.org).
+You can quickly create a Leaf API project with the [leaf cli](https://cli.leafphp.dev):
+
+```sh
+leaf create <project-name> --api --v3
+```
+
+or with [composer](https://getcomposer.org).
 
 ```sh
 composer create-project leafs/mvc <project-name> v3.x-dev
-```
-
-or with the leaf cli:
-
-```sh
-leaf create <project-name> --mvc --v3
 ```
 
 ## Directory Structure
@@ -57,17 +59,13 @@ C:.
 │   ├───models
 │   ├───routes
 │   └───views
-│       ├───assets
-│       │   ├───css
-│       │   ├───images
-│       │   ├───js
-│       │   └───sass
 │       ├───components
 │       └───pages
 │           └───errors
 ├───config
 │   └───command
 ├───public
+│   └───assets
 ├───storage
 │   ├───app
 │   │   └───public
@@ -80,6 +78,7 @@ C:.
 - **app**: This is where you will mostly be working. It houses all your controllers, command and db files.
 - **config**: This holds all your configuration files.
 - **lib**: You can place your libraries and piece files which you need for your app.
+- **public**: This holds the entry point to your app, as well as static assets
 - **storage**: Storage for your files, images, text, databases...
 - **vendor**: This holds all your dependencies and installed files.
 

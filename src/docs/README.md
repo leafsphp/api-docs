@@ -82,4 +82,4 @@ This will start the php web server and load your project at `http://localhost:55
 - [Leaf Console](/leaf-mvc/v/2.0/utils/console)
 - [Controllers](/leaf-mvc/v/2.0/core/controllers)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+

@@ -204,4 +204,4 @@ $output = view("user", ["username" => "Mychi"]);
 - [Models](/leaf-mvc/v/2.0/core/models)
 - [Migrations](/leaf-mvc/v/2.0/database/migrations)
 
-Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
+
