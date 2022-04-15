@@ -13,7 +13,7 @@ Just as with base leaf, you can define routes using the leaf app instance or the
 ```php
 // $app instance (old)
 $app->get('/user/{id}', function($id) {
-  json([
+  response()->json([
     "mesage" => "Your id is $id"
   ]);
 });

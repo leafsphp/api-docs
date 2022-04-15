@@ -63,7 +63,7 @@ fs()->create_folder("new_logs");
 This method allows you to output parsed json, and replaces the `respond` and `respondWithCode` methods from base Leaf.
 
 ```php
-json([
+response()->json([
   "message" => "Something"
 ], 200);
 ```
