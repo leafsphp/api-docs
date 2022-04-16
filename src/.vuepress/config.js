@@ -20,6 +20,7 @@ const sidebar = {
         '/docs/config/app',
         '/docs/config/aloe',
         '/docs/config/auth',
+        '/docs/config/database',
         '/docs/config/cors',
         '/docs/config/views',
         '/docs/config/paths'
@@ -54,7 +55,7 @@ const sidebar = {
         }
       ]
     }
-  ],
+  ]
 }
 
 module.exports = {
