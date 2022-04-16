@@ -14,7 +14,7 @@
         class="site-name"
         :class="{ 'can-hide': $site.themeConfig.logo }"
       >
-        Leaf API&nbsp;<span class="theme-text">3</span> <small class="beta-badge">dev</small>
+        Leaf&nbsp;<span class="theme-text">API</span>
       </span>
     </RouterLink>
 

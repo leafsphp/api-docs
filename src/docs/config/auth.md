@@ -14,6 +14,27 @@ use Leaf\Helpers\Password;
 return [
     /*
     |--------------------------------------------------------------------------
+    | Database table
+    |--------------------------------------------------------------------------
+    |
+    | This is the table that leaf auth will perform authentication
+    | checks on and edit/retrieve users from.
+    |
+    */
+    'DB_TABLE' => 'users',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Use session
+    |--------------------------------------------------------------------------
+    |
+    | Use session based authentication instead of the default JWT based auth.
+    |
+    */
+    'USE_SESSION' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Generate timestamps
     |--------------------------------------------------------------------------
     |
@@ -21,7 +42,7 @@ return [
     | and update methods
     |
     */
-    "USE_TIMESTAMPS" => true,
+    'USE_TIMESTAMPS' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +56,7 @@ return [
     | You can set your own implementation instead of Password::hash
     |
     */
-    "PASSWORD_ENCODE" => function ($password) {
+    'PASSWORD_ENCODE' => function ($password) {
         return Password::hash($password);
     },
 
@@ -50,7 +71,7 @@ return [
     | You can add your own implementation instead of Password::verify
     |
     */
-    "PASSWORD_VERIFY" => function ($password, $hashedPassword) {
+    'PASSWORD_VERIFY' => function ($password, $hashedPassword) {
         return Password::verify($password, $hashedPassword);
     },
 
@@ -63,7 +84,7 @@ return [
     | in your database.
     |
     */
-    "PASSWORD_KEY" => "password",
+    'PASSWORD_KEY' => 'password',
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +94,7 @@ return [
     | Hide id field from user object returned in login, register and update
     |
     */
-    "HIDE_ID" => true,
+    'HIDE_ID' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +104,7 @@ return [
     | Hide password from user object returned in login, register and update
     |
     */
-    "HIDE_PASSWORD" => true,
+    'HIDE_PASSWORD' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +114,7 @@ return [
     | Error to show when the login params aren't found in db
     |
     */
-    "LOGIN_PARAMS_ERROR" => "Username not registered!",
+    'LOGIN_PARAMS_ERROR' => 'Username not registered!',
 
     /*
     |--------------------------------------------------------------------------
@@ -103,33 +124,7 @@ return [
     | Error to show when the login password is wrong
     |
     */
-    "LOGIN_PASSWORD_ERROR" => "Password is incorrect!",
-
-    /*
-    |--------------------------------------------------------------------------
-    | Use session [EXPERIMENTAL]
-    |--------------------------------------------------------------------------
-    |
-    | Use session based authentication instead of the default JWT based auth.
-    |
-    | If you encounter any problems using any new auth session features,
-    | revert to the default auth and manage sessions manually.
-    | Don't forget to open an issue.
-    |
-    */
-    "USE_SESSION" => false,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Turn off experimental warnings
-    |--------------------------------------------------------------------------
-    |
-    | When experimental warnings are turned off, Leaf will ignore all features
-    | which have been tagged as experimental. To actually get the feature to
-    | work, follow the prompt in the warning. 
-    |
-    */
-    "EXPERIMENTAL_WARNINGS" => false,
+    'LOGIN_PASSWORD_ERROR' => 'Password is incorrect!',
 
     /*
     |--------------------------------------------------------------------------
@@ -140,35 +135,42 @@ return [
     | you it'll be created on login rather.
     |
     */
-    "SESSION_ON_REGISTER" => false,
+    'SESSION_ON_REGISTER' => false,
 
     /*
     |--------------------------------------------------------------------------
     | Login page route
     |--------------------------------------------------------------------------
     */
-    "GUARD_LOGIN" => "/auth/login",
+    'GUARD_LOGIN' => '/auth/login',
 
     /*
     |--------------------------------------------------------------------------
     | Register page route
     |--------------------------------------------------------------------------
     */
-    "GUARD_REGISTER" => "/auth/register",
+    'GUARD_REGISTER' => '/auth/register',
 
     /*
     |--------------------------------------------------------------------------
     | Logout route
     |--------------------------------------------------------------------------
     */
-    "GUARD_LOGOUT" => "/auth/logout",
+    'GUARD_HOME' => '/home',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Logout route
+    |--------------------------------------------------------------------------
+    */
+    'GUARD_LOGOUT' => '/auth/logout',
 
     /*
     |--------------------------------------------------------------------------
     | Home page route
     |--------------------------------------------------------------------------
     */
-    "GUARD_HOME" => "/home",
+    'GUARD_HOME' => '/home',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +180,26 @@ return [
     | Add an auth token to the auth session?
     |
     */
-    "SAVE_SESSION_JWT" => false,
-];
+    'SAVE_SESSION_JWT' => false,
 
+    /*
+    |--------------------------------------------------------------------------
+    | JWT Token Secret
+    |--------------------------------------------------------------------------
+    |
+    | Secret string to encode JWT
+    |
+    */
+    'TOKEN_SECRET' => '@_leaf$0Secret!',
+
+    /*
+    |--------------------------------------------------------------------------
+    | JWT Lifetime
+    |--------------------------------------------------------------------------
+    |
+    | How long should JWT be valid for?
+    |
+    */
+    'TOKEN_LIFETIME' => 60 * 60 * 24 * 365
+];
 ```

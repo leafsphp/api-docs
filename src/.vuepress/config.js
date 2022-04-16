@@ -17,6 +17,7 @@ const sidebar = {
       collapsable: false,
       children: [
         '/docs/config/env',
+        '/docs/config/app',
         '/docs/config/aloe',
         '/docs/config/auth',
         '/docs/config/cors',

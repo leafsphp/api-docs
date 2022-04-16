@@ -4,41 +4,53 @@ aside: none
 
 # View Config
 
-Leaf API v2 also ports in Leaf API's view config which allows you to customize how Leaf manages templates.
+leaf API v3 also ports in Leaf MVC's view config which allows you to customize how Leaf manages templates.
 
 ```php
 <?php
 
+use Leaf\View;
+
 return [
     /*
     |--------------------------------------------------------------------------
-    | View Storage Paths
+    | Template Engine [EXPERIMENTAL]
     |--------------------------------------------------------------------------
     |
-    | Most templating systems load templates from disk. Here you may specify
-    | an array of paths that should be checked for your views. Of course
-    | the usual LeafMVC view path has already been registered for you.
+    | Leaf MVC unlike other frameworks tries to give you as much control as
+    | you need. As such, you can decide which view engine to use.
     |
     */
-    "views_path" => views_path(),
+    'view_engine' => \Leaf\Blade::class,
 
     /*
     |--------------------------------------------------------------------------
-    | Compiled View Path
+    | Custom config method
     |--------------------------------------------------------------------------
     |
-    | This option determines where all the compiled Blade templates will be
-    | stored for your application. Typically, this is within the storage
-    | directory. However, as usual, you are free to change this value.
+    | Configuration for your templating engine.
     |
     */
-    "cache_path" => storage_path('framework/views'),
+    'config' => function ($config) {
+        View::blade()->config($config['views_path'], $config['cache_path']);
+    },
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom render method
+    |--------------------------------------------------------------------------
+    |
+    | This render method is triggered whenever render() is called
+    | in your app if you're using a custom view engine.
+    |
+    */
+    'render' => null,
 ];
+
 ```
 
-## Next Steps
+<!-- ## Next Steps
 
 - [Leaf Blade](/leaf/v/2.4.3/views/blade)
-- [Leaf Forms](/leaf/v/2.4.3/views/forms)
-
+- [Leaf Forms](/leaf/v/2.4.3/views/forms) -->
 

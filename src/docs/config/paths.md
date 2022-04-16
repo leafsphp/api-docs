@@ -4,46 +4,47 @@ aside: none
 
 # Path Config
 
-Leaf API v2 comes in with a whole lot of available customizations. One major customization is the paths config. This allows you to change Leaf API's directory structure to something you prefer. This means you can rearrange the whole of Leaf API and have all your files still map correctly: a feature which was only available in skeleton.
+leaf API v3 comes in with a whole lot of available customizations. One major customization is the paths config. This allows you to change leaf API's directory structure to something you prefer. This means you can rearrange the whole of leaf API and have all your files still map correctly: a feature which was only available in skeleton.
 
 ```php
 <?php
 
 return [
-  "controllers_path" => "App/Controllers",
+    'controllersPath' => 'app/controllers',
 
-  "models_path" => "App/Models",
+    'modelsPath' => 'app/models',
 
-  "migrations_path" => "App/Database/Migrations",
+    'migrationsPath' => 'app/database/migrations',
 
-  "seeds_path" => "App/Database/Seeds",
+    'seedsPath' => 'app/database/seeds',
 
-  "factories_path" => "App/Database/Factories",
+    'factoriesPath' => 'app/database/factories',
 
-  "helpers_path" => "App/Helpers",
+    'helpersPath' => 'app/helpers',
 
-  "views_path" => "App/Views",
+    'viewsPath' => 'app/views',
 
-  "config_path" => "App/Config",
+    'configPath' => 'config',
 
-  "storage_path" => "App/storage",
+    'storagePath' => 'storage',
 
-  "commands_path" => "App/Console",
+    'commandsPath' => 'app/console',
 
-  "routes_path" => "App/Routes",
+    'routesPath' => 'app/routes',
 
-  "lib_path" => "Lib",
+    'libPath' => 'lib',
 
-  "public_path" => "public",
+    'publicPath' => 'public',
+
+    'databaseStoragePath' => 'storage/app/db'
 ];
 ```
 
-These defined paths become available through global shortcut functions like `views_path()`
+These defined paths become available through global shortcut functions like `viewsPath()`
 
 ## Next Steps
 
 - [Path Utils](/leaf-mvc/v/2.0/utils/paths)
 - [Leaf Blade](/leaf/v/2.4.3/views/blade)
 - [Leaf Forms](/leaf/v/2.4.3/views/forms)
-
 

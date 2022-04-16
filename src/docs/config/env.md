@@ -1,19 +1,19 @@
 # Env config
 
-Leaf API tries to maintain a working-out-of-the-box configuration as much as possible, so, for the most part, you don't have to configure anything.
+leaf API tries to maintain a working-out-of-the-box configuration as much as possible, so, for the most part, you don't have to configure anything.
 
-Any configuration done in Leaf API is not done for Leaf API, but rather for your application. All config for your app is found in the `.env` file, found in your project root.
+Any configuration done in leaf API is not done for leaf API, but rather for your application. All config for your app is found in the `.env` file, found in your project root.
 
 ## .env
 
 By default, it should look like this:
 
 ```env
-APP_NAME=LEAF_MVC
+APP_NAME="My App"
 APP_ENV=local
 APP_KEY=base64:AUAyDriQD1kFdIbwTHlnCm2pYn+qxDBa55SFwB9PUzg=
-APP_DEBUG=true
 APP_DOWN=false
+APP_DEBUG=true
 APP_URL=http://localhost
 
 DB_CONNECTION=mysql
@@ -22,6 +22,9 @@ DB_PORT=3306
 DB_DATABASE=test
 DB_USERNAME=root
 DB_PASSWORD=
+# DB_CHARSET=utf8
+# DB_COLLATION=utf8_unicode_ci
+# DB_COLLATION=utf8_general_ci
 
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.mailtrap.io
@@ -33,6 +36,12 @@ MAIL_ENCRYPTION=null
 PROD_SERVER=hello
 PROD_PORT=22
 PROD_USER=leaf
+
+SERVER_NAME=LEAF_SERVER
+SERVER_PORT=5500
+SERVER_USER=
+SERVER_PASSWORD=
+
 APPLICATION_DIR=leaf
 APPLICATION_PATH=leaf
 ```

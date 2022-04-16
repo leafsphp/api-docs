@@ -4,183 +4,123 @@ aside: none
 
 # CORS Config
 
-Auth config allows you to directly configure how `Leaf\Auth` behaves. Auth is basically used for authentication, so, configuring this file will allow you to make customizations to your app authentication.
+CORS config allows you to directly configure how CORS works in your API.
 
 ```php
 <?php
 
-use Leaf\Helpers\Password;
-
 return [
     /*
     |--------------------------------------------------------------------------
-    | Generate timestamps
+    | Configure allowed origins
     |--------------------------------------------------------------------------
     |
-    | Automatically generate created_at/updated_at timestamps for register
-    | and update methods
+    | Configures the Access-Control-Allow-Origin CORS header. Possible values:
+    |
+    | * String - set origin to a specific origin. For example if
+    |   you set it to "http://example.com" only requests from
+    |   "http://example.com" will be allowed.
+    |
+    | * RegExp - set origin to a regular expression pattern which will be
+    |   used to test the request origin. If it's a match, the request origin
+    |   will be reflected. For example the pattern /example\.com$/ will reflect
+    |   any request that is coming from an origin ending with "example.com".
+    |
+    | * Array - set origin to an array of valid origins. Each origin can be a String
+    |   or a RegExp. For example ["http://example1.com", /\.example2\.com$/] will
+    |   accept any request from "http://example1.com" or from
+    |   a subdomain of "example2.com".
+    |
+    | * Function - set origin to a function implementing some custom
+    |   logic. The function takes the request origin as the first parameter
+    |   and a callback (called as callback(err, origin), where origin is a
+    |   non-function value of the origin option) as the second.
     |
     */
-    "USE_TIMESTAMPS" => true,
+    'origin' => '*',
 
     /*
     |--------------------------------------------------------------------------
-    | Encode password
+    | Configure allowed HTTP methods
     |--------------------------------------------------------------------------
     |
-    | Password encode is run when leaf wants to encode passwords on register
-    | This exact method is used by default in Leaf, so you can set it to null
-    | if you want to.
-    |
-    | You can set your own implementation instead of Password::hash
+    | Configures the Access-Control-Allow-Methods CORS header.
+    | Expects a comma-delimited string (ex: 'GET,PUT,POST') or
+    | an array (ex: ['GET', 'PUT', 'POST'])
     |
     */
-    "PASSWORD_ENCODE" => function ($password) {
-        return Password::hash($password);
-    },
+    'methods' => 'GET,HEAD,PUT,PATCH,POST,DELETE',
 
     /*
     |--------------------------------------------------------------------------
-    | Verify Password
+    | Configure allowed HTTP headers
     |--------------------------------------------------------------------------
     |
-    | This function is run to verify the password. This implementation is done
-    | by default, so you can set it to null, and it will still work fine.
-    |
-    | You can add your own implementation instead of Password::verify
+    | Configures the Access-Control-Allow-Headers CORS header. Expects a
+    | comma-delimited string (ex: 'Content-Type,Authorization') or
+    | an array (ex: ['Content-Type', 'Authorization']). If not specified,
+    | defaults to reflecting the headers specified in the request's
+    | Access-Control-Request-Headers header.
     |
     */
-    "PASSWORD_VERIFY" => function ($password, $hashedPassword) {
-        return Password::verify($password, $hashedPassword);
-    },
+    'allowedHeaders' => '*',
 
     /*
     |--------------------------------------------------------------------------
-    | Password Key
+    | Configure expose headers
     |--------------------------------------------------------------------------
     |
-    | The default password key. Leaf will expect this key to hold passwords
-    | in your database.
+    | Configures the Access-Control-Expose-Headers CORS header. Expects
+    | a comma-delimited string (ex: 'Content-Range,X-Content-Range')
+    | or an array (ex: ['Content-Range', 'X-Content-Range']).
+    | If not specified, no custom headers are exposed.
     |
     */
-    "PASSWORD_KEY" => "password",
+    'exposedHeaders' => '',
 
     /*
     |--------------------------------------------------------------------------
-    | Hide id
+    | Configure credentials
     |--------------------------------------------------------------------------
     |
-    | Hide id field from user object returned in login, register and update
+    | Configures the Access-Control-Allow-Credentials CORS header.
+    | Set to true to pass the header, otherwise it is omitted.
     |
     */
-    "HIDE_ID" => true,
+    'credentials' => false,
 
     /*
     |--------------------------------------------------------------------------
-    | Hide password
+    | Configure max age
     |--------------------------------------------------------------------------
     |
-    | Hide password from user object returned in login, register and update
+    | Configures the Access-Control-Max-Age CORS header. Set to
+    | an integer to pass the header, otherwise it is omitted.
     |
     */
-    "HIDE_PASSWORD" => true,
+    'maxAge' => null,
 
     /*
     |--------------------------------------------------------------------------
-    | Login params error
+    | Configure preflight continue
     |--------------------------------------------------------------------------
     |
-    | Error to show when the login params aren't found in db
+    | Pass the CORS preflight response to the next handler.
     |
     */
-    "LOGIN_PARAMS_ERROR" => "Username not registered!",
+    'preflightContinue' => false,
 
     /*
     |--------------------------------------------------------------------------
-    | Password error
+    | Log open
     |--------------------------------------------------------------------------
     |
-    | Error to show when the login password is wrong
-    |
-    */
-    "LOGIN_PASSWORD_ERROR" => "Password is incorrect!",
-
-    /*
-    |--------------------------------------------------------------------------
-    | Use session [EXPERIMENTAL]
-    |--------------------------------------------------------------------------
-    |
-    | Use session based authentication instead of the default JWT based auth.
-    |
-    | If you encounter any problems using any new auth session features,
-    | revert to the default auth and manage sessions manually.
-    | Don't forget to open an issue.
+    | Provides a status code to use for successful OPTIONS requests,
+    | since some legacy browsers (IE11, various SmartTVs) choke on 204.
     |
     */
-    "USE_SESSION" => false,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Turn off experimental warnings
-    |--------------------------------------------------------------------------
-    |
-    | When experimental warnings are turned off, Leaf will ignore all features
-    | which have been tagged as experimental. To actually get the feature to
-    | work, follow the prompt in the warning. 
-    |
-    */
-    "EXPERIMENTAL_WARNINGS" => false,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Session on register
-    |--------------------------------------------------------------------------
-    |
-    | If true, a session will be created on a successful registration, else
-    | you it'll be created on login rather.
-    |
-    */
-    "SESSION_ON_REGISTER" => false,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Login page route
-    |--------------------------------------------------------------------------
-    */
-    "GUARD_LOGIN" => "/auth/login",
-
-    /*
-    |--------------------------------------------------------------------------
-    | Register page route
-    |--------------------------------------------------------------------------
-    */
-    "GUARD_REGISTER" => "/auth/register",
-
-    /*
-    |--------------------------------------------------------------------------
-    | Logout route
-    |--------------------------------------------------------------------------
-    */
-    "GUARD_LOGOUT" => "/auth/logout",
-
-    /*
-    |--------------------------------------------------------------------------
-    | Home page route
-    |--------------------------------------------------------------------------
-    */
-    "GUARD_HOME" => "/home",
-
-    /*
-    |--------------------------------------------------------------------------
-    | JWT + Session
-    |--------------------------------------------------------------------------
-    |
-    | Add an auth token to the auth session?
-    |
-    */
-    "SAVE_SESSION_JWT" => false,
+    'optionsSuccessStatus' => 204,
 ];
-
 ```
 
 ## Next Steps
@@ -188,5 +128,4 @@ return [
 - [Leaf Auth](/leaf/v/2.4.3/core/auth)
 - [Models](/leaf-mvc/v/2.0/core/models)
 - [Controllers](/leaf-mvc/v/2.0/core/controllers)
-
 

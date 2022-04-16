@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo-circle.png
 heroText: Leaf API 3.0
-tagline: Leaf API with APIs in mind
+tagline: A minimal but powerful MVC API framework
 actionButtons:
   - text: Get Started
     link: /docs/
