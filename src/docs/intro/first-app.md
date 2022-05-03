@@ -44,9 +44,6 @@ app()->get('/', function() {
 });
 
 // or
-app()->get('/', function() {
-  // Do something here
-});
 
 # Leaf router
 use Leaf\Router;
