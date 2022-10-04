@@ -36,12 +36,6 @@
       <Content class="theme-default-content custom" />
     </div>
 
-    <section class="section-sponsors" :class="{ active: sponsorsActive }" ref="sponsors">
-      <div class="inner">
-        <OpenCollectiveSponsors />
-      </div>
-    </section>
-
     <footer class="main-footer">
       <p v-if="data.socialIcons">
         <SocialIcon

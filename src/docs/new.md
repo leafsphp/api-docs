@@ -58,20 +58,20 @@ With this change, you will need to reference your assets with `PublicPath`
 
 Leaf API now includes configurations in the `config` folder which allows you to easily configure Leaf's features: things like cors, views, authentication and aloe's directories. Editing the configuration allows you to customize the behaviour of Leaf's features.
 
-## Global Methods
-
-Leaf API no longer comes with "self-defined" global methods. Leaf 3 now comes with functional mode which replaces the whole idea of defining functions for Leaf API. Leaf API core which is used in Leaf API, Leaf API and Skeleton comes in with new global functions which extend Leaf 3's functional mode.
-
-## Leaf 3
-
-A little obvious here, but Leaf API 3 runs on Leaf 3. This makes it even lighter, faster and easier to work with. This also means that you have access to tons of features through modules and you won't need to worry about updating the whole framework to receive updates. You only need to upgrade a particular module.
-
-## Modules
-
-Some leaf 3 modules come integrated directly with Leaf API along with some config options.
-
 ## MVC Core
 
 MVC core is a leaf 3 module which contains all the functionality for transforming leaf into a full MVC framework. It comes with features like controllers, models, views, factories and many more MVC specific features. It has been optimised for Leaf API, leaf API and Skeleton to provide the best developer experience.
 
 We really recommend that you [read the MVC core documentation](https://www.leafphp.dev/modules/mvc-core/)
+
+## Global Methods
+
+Leaf API no longer comes with "self-defined" global methods. Leaf 3 now comes with functional mode which replaces the whole idea of defining functions for Leaf API. Leaf MVC core which is used in Leaf MVC, Leaf API and Skeleton comes in with new global functions which extend Leaf 3's functional mode.
+
+## Leaf 3
+
+Leaf API 3 runs on Leaf 3. This makes it even lighter, faster and easier to work with. This also means that you have access to tons of features through modules and you won't need to worry about updating the whole framework to receive updates. You only need to upgrade a particular module.
+
+## Modules
+
+Some leaf 3 modules come integrated directly with Leaf API along with some config options.

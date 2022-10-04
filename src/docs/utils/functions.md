@@ -101,7 +101,7 @@ function user() {
 
 ```php
 // 1 item
-$username = request("username");
+$username = request()->get("username");
 
 // multiple items
 $loginData = request(["username", "password"]);
@@ -134,7 +134,7 @@ $username = requestData("username");
 
 ```php
 // output json
-response($data);
+response()->json($data);
 
 // return leaf response
 response()->page("index.html");

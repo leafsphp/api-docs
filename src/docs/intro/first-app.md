@@ -154,38 +154,12 @@ There are however global methods like `json` we saw above. You can use these met
 
 ```php
 public function search() {
-  $keywords = request('keywords');
+  $keywords = request()->get('keywords');
 
   // ... handle search operation
-  response($results);
+  response()->json($results);
 }
 ```
-
-::: tip <code>request</code>
-You might have noticed that we didn't use `request()->get()`. That's because the `request` global takes in an optional parameter which immedietly runs the `get` method directly.
-
-```php
-// get username
-$username = request('username');
-
-// get username
-$username = request()->get('username');
-```
-
-:::
-
-::: tip <code>response</code>
-You might have noticed that we didn't use `response()->json()`. That's because the `response` global takes in an optional parameter to output which immedietly runs the `json` method directly.
-
-```php
-// output json data
-$username = response($output);
-
-// output json data
-$username = response()->json($output);
-```
-
-:::
 
 If for some reason, you can't use the functional mode globals, you can always use the request and response classes.
 
@@ -423,8 +397,8 @@ Post::where('title', 'Post Two')->get();
 
 // create a new post
 $post = new Post;
-$post->title = request('title');
-$post->body = request('body');
+$post->title = request()->get('title');
+$post->body = request()->get('body');
 $post->save();
 
 // delete a post
