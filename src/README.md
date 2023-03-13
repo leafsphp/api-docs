@@ -5,7 +5,7 @@ heroText: Leaf API 3.0
 tagline: A minimal but powerful MVC API framework
 actionButtons:
   - text: Get Started
-    link: /docs/
+    link: https://leafphp.dev/docs/leafapi/
   - text: GitHub
     link: https://github.com/leafsphp/leafapi
     extraClass: github grey

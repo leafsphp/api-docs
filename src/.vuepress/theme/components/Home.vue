@@ -35,19 +35,6 @@
 
       <Content class="theme-default-content custom" />
     </div>
-
-    <footer class="main-footer">
-      <p v-if="data.socialIcons">
-        <SocialIcon
-          v-for="icon in data.socialIcons"
-          :type="icon.type"
-          :link="icon.link"
-          :key="icon.link"
-          extra-class="inverted"
-        />
-      </p>
-      <p class="copyright" v-html="data.footer"></p>
-    </footer>
   </main>
 </template>
 

@@ -137,7 +137,7 @@ module.exports = {
         items: [
           {
             text: 'Guide',
-            link: '/docs/'
+            link: 'https://leafphp.dev/docs/leafapi/'
           },
           {
             text: 'Codelabs',
@@ -175,7 +175,7 @@ module.exports = {
               {
                 text: 'Join',
                 link: 'https://leafphp.dev/community/join/'
-              },
+              }
             ]
           },
           {
@@ -222,7 +222,7 @@ module.exports = {
     sidebarDepth: 2,
     sidebar: {
       collapsable: true,
-      '/docs/': sidebar.guide,
+      '/docs/': sidebar.guide
     },
     smoothScroll: true,
     algolia: {
